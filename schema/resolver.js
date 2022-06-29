@@ -32,6 +32,20 @@ User: {
   favouriteMovies:()=>{
     return _.filter(MovieList,(movie)=>movie.yearOfPublication>=2000 &&movie.yearOfPublication<=2010 )
   }
+},
+
+// User Mutation
+Mutation:{
+  createUser:(parent,args)=>{
+    const user = args.input;//input:CreateUserInput
+    console.log(user);
+    const newId = UserList[UserList.length-1].id;
+    user.id = newId+1;
+    console.log(user);
+    UserList.push(user)
+    return user;
+
+  }
 }
 
 }

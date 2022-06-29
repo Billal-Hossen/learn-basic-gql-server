@@ -34,6 +34,17 @@ type User {
     name: String!
     yearOfPublication: Int!
     isInTheaters: Boolean!
+ },
+
+ input CreateUserInput{
+    name: String!
+    userName: String!
+    age: Int!
+    nationality: Nationality=India
+ }
+
+ type Mutation{
+    createUser(input:CreateUserInput!):User!
  }
 
 
