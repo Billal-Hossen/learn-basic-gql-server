@@ -45,7 +45,35 @@ Mutation:{
     UserList.push(user)
     return user;
 
+  },
+  updateUserName:(parent,args)=>{
+    const {id,newUserName} = args.input;
+    console.log(newUserName,id);
+    let updateUser;
+    UserList.forEach((user)=>{
+      if(user.id==id){
+        user.name = newUserName;
+        console.log(user);
+        updateUser=user;
+        
+      }
+
+
+    })
+    return updateUser;
+
+  },
+
+  // delete user
+  deleteUser:(parent,args)=>{
+    const id = args.id;
+    console.log(id);
+
+    _.remove(UserList,(user)=>user.id===Number(id))
+    return null;
+
   }
+
 }
 
 }

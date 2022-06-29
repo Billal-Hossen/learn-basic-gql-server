@@ -42,9 +42,15 @@ type User {
     age: Int!
     nationality: Nationality=India
  }
+ input UpdateUserInput{
+    id:ID!
+    newUserName:String!
+ }
 
  type Mutation{
     createUser(input:CreateUserInput!):User!
+    updateUserName(input:UpdateUserInput!): User!
+    deleteUser(id:ID!):User
  }
 
 
