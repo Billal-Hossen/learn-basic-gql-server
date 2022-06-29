@@ -25,7 +25,14 @@ Query: {
     const movie = _.find(MovieList,{name:name});
     return movie;
 
+  },
+ 
+},
+User: {
+  favouriteMovies:()=>{
+    return _.filter(MovieList,(movie)=>movie.yearOfPublication>=2000 &&movie.yearOfPublication<=2010 )
   }
 }
+
 }
 module.exports = {resolvers};

@@ -17,6 +17,7 @@ type User {
     age: Int!
     nationality: Nationality!
     friends:[User]
+    favouriteMovies:[Movie]
 
  }
 
